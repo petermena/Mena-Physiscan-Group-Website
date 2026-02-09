@@ -504,7 +504,7 @@
             </div>
 
             <div class="max-w-2xl mx-auto">
-                <form id="contact-form" class="space-y-6">
+                <form id="contact-form" action="https://formspree.io/f/mlgwddkv" method="POST" class="space-y-6">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-semibold text-navy-700 mb-1.5">Full Name</label>
@@ -626,13 +626,22 @@
         const formSuccess = document.getElementById('form-success');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // For a static site, you can integrate with:
-            // - Formspree (https://formspree.io)
-            // - Netlify Forms
-            // - EmailJS
-            // For now, show success message
-            contactForm.classList.add('hidden');
-            formSuccess.classList.remove('hidden');
+            const formData = new FormData(contactForm);
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    contactForm.classList.add('hidden');
+                    formSuccess.classList.remove('hidden');
+                    contactForm.reset();
+                } else {
+                    alert('There was a problem sending your message. Please try emailing us directly.');
+                }
+            }).catch(() => {
+                alert('There was a problem sending your message. Please try emailing us directly.');
+            });
         });
     </script>
 
