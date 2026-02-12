@@ -1,0 +1,199 @@
+.tool-panel {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.tool-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tool-intro {
+  margin-bottom: 8px;
+}
+
+.tool-intro h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.tool-intro p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Mode tabs */
+.mode-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-primary);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
+
+.mode-tab {
+  flex: 1;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.mode-tab:hover {
+  color: var(--text-primary);
+}
+
+.mode-tab.active {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+/* Form fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+}
+
+.field-row .field {
+  flex: 1;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  padding: 10px 14px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.15s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.field textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.field select {
+  cursor: pointer;
+}
+
+/* Action button */
+.action-button {
+  padding: 12px 24px;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  align-self: flex-start;
+}
+
+.action-button:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Result panel */
+.tool-result {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.result-header h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.copy-button {
+  padding: 6px 14px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.copy-button:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.result-content {
+  padding: 20px;
+  line-height: 1.65;
+}
+
+.loading-text {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .field-row {
+    flex-direction: column;
+  }
+}
