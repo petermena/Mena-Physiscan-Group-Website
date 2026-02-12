@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Aria",
+    "slug": "aria-assistant",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "backgroundColor": "#0f0f13"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.aria.assistant"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0f0f13"
+      },
+      "package": "com.aria.assistant"
+    }
+  }
+}
